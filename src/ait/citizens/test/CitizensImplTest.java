@@ -75,8 +75,8 @@ class CitizensImplTest {
         citizens.add(p3);
         citizens.add(p4);
         citizens.add(p5);
-        List<Person> expected = new LinkedList<>();
-        expected.add(p3);
+        Iterable<Person> expected = new LinkedList<>();
+        ((LinkedList<Person>) expected).add(p3);
         Iterable<Person> actual = citizens.find("L3");
         assertIterableEquals(expected, actual);
     }
@@ -102,7 +102,7 @@ class CitizensImplTest {
         citizens.add(p3);
         citizens.add(p4);
         citizens.add(p5);
-        List<Person> expected = List.of(p2, p5, p1, p3, p4);
+        Iterable<Person> expected = List.of(p2, p5, p1, p3, p4);
 
         Iterable<Person> actual = List.of(
                 new Person(1, "F3", "L1", LocalDate.of(1991, 10, 3)),
